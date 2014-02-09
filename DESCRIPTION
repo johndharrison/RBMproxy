@@ -1,0 +1,19 @@
+Package: RBMproxy
+Type: Package
+Title: R bindings for Browser Mob proxy.
+Version: 0.0.1
+Date: 2014-02-09
+Author: John Harrison <johndharrison0@gmail.com>
+Maintainer: John Harrison <johndharrison0@gmail.com>
+Description: These are R bindings for the Browser Mob proxy. They use
+    the RESTAPI defined at
+    https://github.com/lightbody/browsermob-proxy to communicate with
+    a Browser Mob proxy.
+License: AGPLv3 and CC-NC
+Depends:
+    R (>= 2.15.0),methods,RCurl,RJSONIO,XML
+Suggests:
+    testthat,
+    knitr,
+    RSelenium
+VignetteBuilder: knitr
