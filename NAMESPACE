@@ -1,2 +1,8 @@
+export(.DollarNames.bmProxy)
+export(.DollarNames.errorHandler)
+export(bmProxy)
 export(checkForProxy)
+export(errorHandler)
 export(startProxy)
+exportClasses(bmProxy)
+exportClasses(errorHandler)

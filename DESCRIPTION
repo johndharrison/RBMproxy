@@ -17,3 +17,7 @@ Suggests:
     knitr,
     RSelenium
 VignetteBuilder: knitr
+Collate:
+    'errorHandler.R'
+    'bmProxy.R'
+    'utils.R'
