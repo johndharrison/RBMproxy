@@ -70,13 +70,13 @@ startProxy <- function (dir = NULL, port = 9090)
 }
 
 #' @export .DollarNames.bmProxy
-#' @export .DollarNames.errorHandler
+#' @export .DollarNames.errorHandle
 #' 
 
 .DollarNames.bmProxy <- function(x, pattern){
   grep(pattern, getRefClass(class(x))$methods(), value=TRUE)
 }
 
-.DollarNames.errorHandler <- function(x, pattern){
+.DollarNames.errorHandle <- function(x, pattern){
   grep(pattern, getRefClass(class(x))$methods(), value=TRUE)
 }

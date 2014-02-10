@@ -1,4 +1,4 @@
-#' CLASS errorHandler
+#' CLASS errorHandle
 #'
 #' class to handle errors
 #'
@@ -6,16 +6,16 @@
 #'  
 #'@section Methods:
 #'  \describe{
-#'    \item{\code{new(...)}:}{ Create a new \code{errorHandler} object. ... is used to define the appropriate slots.}
+#'    \item{\code{new(...)}:}{ Create a new \code{errorHandle} object. ... is used to define the appropriate slots.}
 #'    }
 #'      
-#' @export errorHandler
-#' @exportClass errorHandler
+#' @export errorHandle
+#' @exportClass errorHandle
 #' @examples
 #' \dontrun{
 #' }
 #' 
-errorHandler <- setRefClass("errorHandler",
+errorHandle <- setRefClass("errorHandle",
                             fields   = list(statusCodes = "character"
                             ),
                             methods  = list(

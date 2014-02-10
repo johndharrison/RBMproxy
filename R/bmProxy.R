@@ -30,7 +30,7 @@ bmProxy <- setRefClass("bmProxy",
                          upstreamKbps = "numeric",
                          latency = "numeric"
                        ),
-                       contains = "errorHandler",
+                       contains = "errorHandle",
                        methods = list(
                          initialize = function(host = "localhost",
                                                serverport             = 8080L,
@@ -103,13 +103,13 @@ bmProxy <- setRefClass("bmProxy",
                            if(!is.null(initialPageRef)){
                              cr <- paste0("initialPageRef=", initialPageRef)
                            }
-                           if(!captureHeaders){
+                           if(captureHeaders){
                              cr <- ifelse(is.null(cr), "captureHeaders=true", paste(cr, "captureHeaders=true", sep = "&"))
                            }
-                           if(!captureContent){
+                           if(captureContent){
                              cr <- ifelse(is.null(cr), "captureContent=true", paste(cr, "captureContent=true", sep = "&"))
                            }
-                           if(!captureBinaryContent){
+                           if(captureBinaryContent){
                              cr <- ifelse(is.null(cr), "captureBinaryContent=true", paste(cr, "captureBinaryContent=true", sep = "&"))
                            }
                            if(is.null(cr)){
@@ -118,6 +118,14 @@ bmProxy <- setRefClass("bmProxy",
                              res <- queryProxy(ipAddr, method = "PUT", qdata = cr)                             
                            }
                            res
+                         },
+                         
+                         selProxy = function(){
+                           if(is.na(clientport)){
+                             print("START A PROXY using $start\\(\\) first")
+                           }else{
+                             list(proxy = list(proxyType = 'manual', httpProxy = paste(host, clientport, sep = ':')))
+                           }
                          },
                          
                          newPage = function(){
